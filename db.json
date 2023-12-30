@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": 5,
+      "content": "Advanc",
+      "important": true
+    },
+    {
+      "id": 4,
+      "content": "Quite good",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "Averag",
+      "important": true
+    }
+  ]
+}
