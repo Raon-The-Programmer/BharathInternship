@@ -13,14 +13,17 @@ const View = () => {
       
     }
     useEffect(()=>{fetchData()},[])
-  return (
-    <div><h1>APP</h1>
-    <ul>
-      {data.map((item)=>(
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul></div>
-  )
+  return (<div>
+    <h2>User List</h2>
+    <div className='container'>
+    {data.map((user) => (
+      <div key={user.id} className="user-card">
+        <h3>{user.name}</h3>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
+      </div>
+    ))}</div>
+  </div>)
 }
 
 export default View

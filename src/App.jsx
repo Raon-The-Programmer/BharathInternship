@@ -4,6 +4,7 @@ import { Routes,BrowserRouter as Router,Route,Link } from 'react-router-dom'
 import Dashboard from './components/Dashboard'
 import Create from './components/Create'
 import Edit from './components/Edit'
+import './App.css'
 import View from './components/View'
 
 const App = () => { 
