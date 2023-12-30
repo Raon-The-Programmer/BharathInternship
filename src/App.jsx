@@ -1,28 +1,29 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Routes,BrowserRouter as Router,Route,Link } from 'react-router-dom'
+import Dashboard from './components/Dashboard'
+import Create from './components/Create'
+import Edit from './components/Edit'
+import View from './components/View'
 
-const App = () => {
-  const[data,setData] = useState([])
-  const fetchData = async()=>{
-    try{const res = await axios.get('https://jsonplaceholder.typicode.com/users')
-    setData(res.data)}
-    catch(err){
-      console.log('error occured while fetching: ',err)
-    }
-    
-  }
-  useEffect(()=>{fetchData()},[])
-  
-
+const App = () => { 
   return (
     <div>
-    <h1>APP</h1>
-    <ul>
-      {data.map((item)=>(
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
+      <Router>
+        <div>
+          <Link to='/' style={{paddingRight:'15px'}}>Dashboard</Link>
+          <Link to='/create' style={{paddingRight:'15px'}}>Create</Link>
+          <Link to='/edit' style={{paddingRight:'15px'}}>Update and Delete</Link>
+          <Link to='/view' style={{paddingRight:'15px'}}>View</Link>
+        </div>
+        <Routes>
+          <Route path='/' element={<Dashboard/>}/>
+          <Route path='/create' element={<Create/>}/>
+          <Route path='/edit' element={<Edit/>}/>
+          <Route path='/view' element={<View/>}/>
+        </Routes>
+      </Router>
+    
     </div>
   )
 }
