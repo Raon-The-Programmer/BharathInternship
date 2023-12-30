@@ -26,4 +26,4 @@ const View = () => {
   </div>)
 }
 
-export default View
+export default View;

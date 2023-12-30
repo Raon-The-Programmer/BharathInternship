@@ -4,8 +4,8 @@ import './Dashboard.css'
 const Dashboard = () => {
   return (
     <div>
-    <h1>Notes Application</h1>
-    <p>This is a note application which uses the following api end-points.</p>
+    <h1>Axios Application</h1>
+    <p>This is an axios application which uses the following api end-points.</p>
   <table>
     <thead>
       <tr>
@@ -17,44 +17,44 @@ const Dashboard = () => {
 
     <tbody>
       <tr>
-        <td>/notes</td>
+        <td>/view</td>
         <td>GET</td>
-        <td>Fetches all the notes/resources in the collection</td>
+        <td>Fetches all the users/resources in the collection</td>
       </tr>
       
       <tr>
-        <td>/notes/:id</td>
+        <td>/view/:id</td>
         <td>GET</td>
-        <td>Fetches a single note/resource</td>
+        <td>Fetches a single user/resource</td>
       </tr>
 
       <tr>
-        <td>/notes</td>
+        <td>/create</td>
         <td>POST</td>
-        <td>Creates a new note/resource based on the request data</td>
+        <td>Creates a new user/resource based on the request data</td>
       </tr>
 
       <tr>
-        <td>/notes/:id</td>
+        <td>/edit</td>
         <td>PUT</td>
-        <td>Replaces the entire identified note/resource with the request data</td>
+        <td>Replaces the entire identified user/resource with the request data</td>
       </tr>
 
       <tr>
-        <td>/notes/:id</td>
+        <td>/edit</td>
         <td>DELETE</td>
-        <td>Deletes the identified note/resource</td>
+        <td>Deletes the identified user/resource</td>
       </tr>
       </tbody>
   </table>
   
   <div>
-    <h3>The Notes application has the following features:</h3>
+    <h3>The axios application has the following features:</h3>
     <ul>
-      <li>Users can create a new note</li>
-      <li>Users can view all notes</li>
-      <li>Users can select a single note and edit/update it!</li>
-      <li>Users can delete a note at a time</li>
+      <li>Users can create a new User detail</li>
+      <li>Users can view all user details</li>
+      <li>Users can select a single user and edit/update it!</li>
+      <li>Users can delete a user at a time</li>
     </ul>
   </div>
 </div>
