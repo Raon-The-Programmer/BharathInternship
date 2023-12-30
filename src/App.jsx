@@ -23,7 +23,7 @@ function App(props) {
   const addNote=(e)=>{
     e.preventDefault();
     let newnote={
-      id:notes.length+1,
+      id:Date.now(),
       content:newContent,
       important:importantvalue === 'true'
     }
@@ -58,13 +58,13 @@ function App(props) {
     <label><input name='filter' type='radio' value='all' onChange={handleChange} checked={showStatus==='all'}/>All</label>
     <label> <input name='filter' type='radio' value='imp' onChange={handleChange}/>Important Notes</label>
     <label> <input name='filter' type='radio' value='non' onChange={handleChange}/>Non Important</label>
-    <ul>
+    <ol>
       {
         filteredNotes.map((note,index)=>
           <li key={index}>{note.content}</li>
         )
       }
-    </ul>
+    </ol>
     <hr />
     <h2>Add a new note</h2>
     <form onSubmit={addNote} id='1'><label htmlFor="content">Content: &nbsp;&nbsp;&nbsp;</label>

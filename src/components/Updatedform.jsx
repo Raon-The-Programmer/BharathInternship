@@ -17,6 +17,16 @@ const handleSubmit=(e)=>{
     axios.put(`http://localhost:3001/notes/${selectedNote.id}`,note)
     fetchNotes()
 }
+const handleDelete=async(e)=>{
+    e.preventDefault()
+    try{
+        const res = await  axios.delete(`http://localhost:3001/notes/${selectedNote.id}`)
+        fetchNotes()
+
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
     const fetchNote=async()=>{
@@ -36,7 +46,7 @@ const handleSubmit=(e)=>{
     fetchNote();
  },[selectID])
   return (
-    <div><form action='submit' onSubmit={handleSubmit}>
+    <div><form action='submit'>
             <label htmlFor="submit">Edit you content:&nbsp;&nbsp;
                 <input value={editedContent} onChange={e=>seteditedContent(e.target.value)} type="text" />
             </label>
@@ -52,7 +62,7 @@ const handleSubmit=(e)=>{
             </label>
             <br />
         <br />
-        <button>Update List</button>
+        <button onClick={handleSubmit}>Update List</button>
         <button style={{marginLeft:'10px'}} onClick={handleDelete}>Delete</button>
         </form>
         

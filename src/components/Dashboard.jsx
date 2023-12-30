@@ -13,7 +13,7 @@ const Dashboard = ({notes,setNotes,fetchNotes}) => {
                 <option>{'Select an ID'}</option>
                 {
                     notes.map((note,index)=>
-                        <option key={index}>{note.id}</option>
+                        <option value={note.id} key={index}>{note.content}</option>
                     )
                 }
             </select>
